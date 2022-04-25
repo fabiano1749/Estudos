@@ -1,0 +1,67 @@
+//Definir usuário no git
+1) git config --global user.name "fabiano1749" 
+2) git config --global user.email "fabiano1749@gmail.com"
+obs: Se quiser configurar usuario e email apenas para um repositório específico não deve-se usar a flag --global
+3) git config --li Exibe as configurações do git 
+4) para remover umas das configurações: git config --global --unset user.email  -> remove a configuração do email
+
+
+//O git vai colorir as interações feitas por mim 
+3) git config --global color.ui true 
+
+4) Exibir o branch corrente no terminal
+	*Para isso adicione o seguinte código no final do arquivo .bashrc ou .bash_profile (ambos encontrados na home do usuário ~/
+	**export PS1='\u@\h\[\033[01;34m\] \w\[\033[0;32m\]$(__git_ps1 " (%s)")\[\033[01;34m\]$\[\033[00m\] '
+	*Por último, rode o comando: source ~/.bashrc ou source ~/.bash_profile  para recarregar e ver a alteração sem precisar reiniciar o terminal.	
+
+// O diretório que esse comando for executado torna-se um repositírio do git. É criada a pasta .git que o git usará para versionar os documentos
+5) git init 
+
+// Exibe o status do repositório do git
+6) git status 
+
+	Estágios de um arquivo no repositório:
+	1 - Untracked files ou arquivos não monitorados
+		São arquivos novos que ainda não são enxergados/reconhecidos pelo git	
+
+	2 - Changes to be committed ou mudanças a serem submetidas
+		Ao executar o comando [git add <arquivo>] o git passa a monitorar os arquivos antes desconhecidos, porem eles ainda não estão versionados, ou seja não possuem um 		número de versão. 
+
+	3 - Arquivos comitados 
+		Nesse estágio o arquivo ja faz parte do controle de versão, ou seja ele esta sendo versionado
+	
+		Ao editar um arquivo que está no terceiro estagio ele volta para o segundo estágio e você precisa executar git add <arquivo> para aceitar as mudanças no arquivo e 			depois  git comit <arquivo>  para gerar uma nova versão desse arquivo.
+
+
+7) git log 	
+	1) git log -p  Exibe as alteraçoes de todos os comites.
+	2) git log -p -1 Exibe as alterações do ultimo commit -2 dos dois ultimos e assim sucessivamente.
+	3) git log --stat Exibe as estatisticas das alterações em cada arquivo. Número de inserções e deleções por exemplo.
+	4) git log --pretty=oneline Exibe os comites em uma única linha - hash + mensagem.
+	5) git log --pretty=format:"%h - %an, %ar : %s" Exibe os comits em uma linha porem com as informações do comit formatadas.
+	6) git log --since=2.days Exibe todos os comites realizados nos ultimos 2 dias
+	
+	//Adicionando arquivos à staging área
+8) * git add <nomes dos arquivos separados por espaço> 
+   * git add * // Adiciona todos os arquivos novos ou modificados na área de preparação - considera apenas o diretório corrente
+   * git add . // Adiciona todos os arquivos novos ou modificados na área de preparação - não trata exclusão de arquivos 	
+   * git add -A // Adiciona todos os arquivos novos ou modificados na área de preparação - considera todas as pastas do projeto 
+	
+	//Removendo arquivos da staging área
+9) * git reset <nomes dos arquivos separados por espaço> 
+   * git reset // Retira todos os arquivos da área de preparação 
+
+
+// faz add e commit ao mesmo tempo 
+9) git commit -a -m "mensagem"
+
+
+10) git checkout <hash do commit> cria um novo branch contendo o stado do repositorio no instante em que foi feito aquele commit.
+	O comando git checkout  serve também para altenar entre os diversos branches existentes. As alterações feitas em um branch não afeta 		outros.     
+
+11) git reset HEAD~1 --soft Volta 1 commit. As mudanças feitas valtam para o status anterior. O commit é apagado porém as mudanças realizadas voltam 	 para o status anterior, prontas para serem commitadas novamente.
+
+12) git reset HEAD~1 --hard Volta 1 commit. O commit e as alterações feitas no commit são perdidas.
+
+// Com esse comando é criado um novo branch a partir do do branch corrente
+13) git checkout -b <nome do branch>

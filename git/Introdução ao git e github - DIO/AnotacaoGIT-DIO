@@ -1,0 +1,104 @@
+Comandos básicos:
+
+Windows           	Linux
+
+cd			cd		caminhar pelas pastas 	
+dir			ls		listar conteúdo de um diretório
+mkdir			mkdir		criar uma pasta
+del / rmdir		rm -rf		excluir e remover uma pasta ou arquivo
+
+---------------  Intalar a versão mais recente do git: https://git-scm.com/downloads
+
+add-apt-repository ppa:git-core/ppa -y
+apt update
+sudo apt install git
+
+-----------------Tópicos fundamentais
+
+****SHA1 - Algoritmo de encriptação -> Gera um conjunto de caracteres identificador de 40 dígitos
+Aplica-se o algoritmo em um arquivo e ele gera um identificador de 40 caracteres.
+Dessa maneira é possível verificar que uma arquivo sofreu alterações ou não. se o hash for deferente do anterior é porque houveram mudanças no arquivo.
+
+****Objetos internos
+**Blobs:
+O git gera o hash do arquivo mas em uma estrutura chamada de BLOB que contem metadados a respeito do aquivo 
+Por isso se usar a função git hash-object e a função openssl sha1 em um mesmo arquivo as saídas serão diretentes 
+
+**Trees:
+Armazenam blobs 
+
+**Commits:
+O objeto commit contem os seguintes atributos: Tree, parent, autor, mensagem e timestamp
+
+O git é um sistema de versionamento DISTRIBUIDO E SEGURO: Cada um dos repositórios possuem todo o histórico 
+
+----------------Shaves SSH e Tokens para autenticação no github
+SSH: Serve para se estabelecer uma conexão segura(encriptada) entre dois hosts
+
+**** Gerando as shaves ssh:
+1) ssh-keygen -t ed25519 -C fabiano1749@gmail.com
+Será solicitada uma senha para gerar o par de chaves
+
+Obs: pode-se usar o comando cat nomeChavePublica para visualizar o conteúdo do arquivo(Copiar colar no gitHub)
+
+2) Dentro da pasta onde estão as chaves devese ativar o processo agente ssh com o comando
+eval $(ssh-agent -s)
+Depois deve-se passar para o agente a chave privada com o comando:
+ssh-add nomeDaChavePrivada
+Será exigida a mesma senha que foi utilizada para gerar o par de chaves
+
+*Para clonar um repositório com ssh deve-se clicar em code , escolher a aba SSH, copiar o caminho ssh
+ Depois no terminal digitar: git clone caminho ssh copiado
+
+**** Token de acesso
+O token é gerado no github e é possível estabelecer uma validade para ele tipo 60 dias.
+O token gerado deve ser copiado e salvo em uma pasta no seu computador
+Para clonar um repositório usando um Token deverá ser usado o link da aba HTTPS
+No terminal digitar: git clone link Https 
+Será solicitado o token  
+
+-----------------Iniciando o git e criado o primeiro commit
+
+Comandos: git init, git add, git commit
+
+* git init: transforma a pasta em um repositório git
+* git add nomeArquivo1 nomeArquivo2 -> Envia apenas esse arquivos para a área de staging
+* git add * ->  adiciona todos os arquivos na area de transferência(stage) : Os arquivos na área de tranferência serão 'enviados' no próximo commit
+* git add. -> Envia todos os arqivos untracked e unmodified para a área de staging
+
+
+* git reset -> retira os arquivos da área de stage
+* git commit -m "mensagem do commit" -> Ao aplicar esse comando, os arquivos da área de stage passarão a ser versionados pelo git
+
+-----------------Ciclo de vida 
+
+1) untracked   : git add -> 4 
+2) unmodified  : git add -> 4 , modifica o arquivo -> 3
+3) modified    : git add -> 4	
+4) staging     : git commit -m "Mensagem" -> (Cria um snapShot e or arquivos ficam no status 2)
+5) repositorio local
+-----------------Git hub
+
+*Para vincular o repositório local a um repositório remoto deve-se  usar o seginte comando:
+ 1) git remote add origin URL DO REPOSITORIO REMOTO
+ 2) git remote -v -> Lista os repositórios remotos adicionados
+ 3) origin é um alias para a url, para não precisar ficar digitando a url o tempo todo
+ 
+ 4) git push origin master -> Está empurrando as mudanças feitas no repositório local para o repositório remoto - origin(alias do repositorio remoto) - master(branch do repositório remoto) 
+
+
+--------------Como os conflitos ocorrem e como resolve-los
+
+*Os conflitos ocorrem quando há edições na mesma linha do arquivo
+
+**Antes de dar push é sempre bom dar um pull primeiro para atualizar o nosso repositório local com o remoto e resolver possíveis conflitos.
+
+depois de resolver os conflitos deve-se fazer o commit no repositório local e depois fazer o push
+
+*Quando ocorrem os conflitos o git não altera os arquivos automáticamente. Em cada arquivo que ocorreu o conflito o git mostra as alterações feitas por você e as alteraçoes presentes no repositório remoto e você tem 
+decidir manualmente como vai ficar o arquivo final.
+
+******Para clonar um repositório remoto
+git clone url do repositório remoto
+
+

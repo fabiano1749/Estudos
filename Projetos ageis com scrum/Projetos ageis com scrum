@@ -1,0 +1,158 @@
+------------Conceitos básicos
+
+* Metodologia tradicional: Objetivo de negócios  ->  (Processo: Concepção, Análise e Design, Desenvolvimento, Testes, Implantação) -> Produto
+* Princípio de Pareto: 20% das funcionalidades de um software costumam gerar 80% ou mais do benefício esperado.  
+
+** Processo tradicional(Waterfaull ou cascata): Só permite que o projeto avance quando uma fase está inteiramente completa.
+** Processo Ágil: Construção incremental(Máximo 1 mês) e iterativa -> Em cada ciclo desenvolve complentamente um requisito do sistema. Em cada fase entrega para o cliente um produto de software executável 
+
+Comparativo:
+
+--Tradicional
+*Escopo definido no início do projeto(Preditivo)
+*Projeto controlado por fases e marcos
+*Cliente só vê o sistema funcionando no fim do projeto
+*Resistência a mudanças
+
+--Ágil
+*Escopo definido ao longo do projeto(Adaptativo)
+*Projeto controlado por funcionalidades entregues
+*Em cada iteração o cliente tem acesso a um conjunto de funcionalidades executáveis.
+*Mudanças ocorrem de acordo com feedbacks - As mudanças são bem vindas porque o objetivo final é entregar um produto que agrade o cliente, então se o cliente tiver necessidade de mudanças elas serão implementadas.
+ 
+Em projeto tradicionais corre-se o risco de descobrir que estava  errado depois de vários meses enquanto em projetos ágeis isso ocorre em no máximo um mês.
+
+
+Ágil != Rápido
+
+O que é ser ágil: Erar rápido e corrigir rápido, Entregar o máximo de valor para o cliente
+  - Rapidez na mudança
+  - Fazer coisas complexas de forma simples
+  - Equipe comprometida com objetivos mais curtos
+  - Maior valor para o cliente (O cliente acompanha a contrução do produto e já tem acesso a parte desse produto mais rápido) 
+
+SCRUM -> Framework de gerenciamento de equipes ágeis
+ Pilares do scrum(Tranparencia, adaptação e inspeção) 
+ *Conversar mais(entender o que precisa ser feito) e escrever menos(código que será obsoleto no futuro)
+ *Entregas continuas
+ 
+ Razões para adotar o SCRUM:
+ 1) Entrega contínua(2 a 4 semanas)
+ 2) Feedbacks constantes do cliente
+ 3) Redução de incertezas
+ 4) Comprometimento da equipe
+ 5) Maior valor para o negócio
+ 6) Envolvimento do cliente em todo o ciclo
+ 7) Melhoria continua
+ 
+ Caracteristicas do time SCRUM
+ 1) Equipes capazes de se auto-organizarem
+ 2) As tarefas são do time e todos são responsáveis
+ 3) Forte comprometimento com os resultados
+
+
+---------------Papeis e responsabilidades de cada um do time
+
+1) Product owner: 
+	*Representa a área de negócios
+	*Define as funcionalidades do software
+	*Prioriza as funcionalidades de acordo com o valor para o negócio
+	*Garante que o time de desenvolvimento compreenda os requisitos do backlog no nível necessário
+2) Scrum Master:
+	*Garante a aplicação do scrum
+	*Age como facilitador
+	*Define o backlog juntamente com o product owner
+	*Treina o time em autogerenciamento interdisciplinaridade 
+3) Time de desenvolvimento:(3 a 9 integrantes)
+	*Deve possuir as habilidade necessárias para a contrução do software
+
+--------------Cerimonias do SCRUM
+Time Box: Tempo máximo para fazer uma cerimônia ou uma Sprint
+
+Sprint: Principal evento do SCRUM - Duração 30 dias corridos(ou menos) -> Em uma sprint é feito o desenvolvimento completo de uma parte de um software.
+	* Planejamento da Sprint (Planning):
+		PO, SM , DEV -> É definido o que será feito e como será feito 
+		Time box: 8 horas
+		Nas primeiras 4 hotas: O PO explica as funcionalidade do backlog
+		Nas últimas 4 horas: Os DEVS juntamente com o SM discutem como fazer (Quebra das histórias em tarefas) é recomendado que o PO não participe
+		Planing poker: Técnica utilizada para estimar o tempo necessário para realizar cada tarefa
+	
+	* Reuniões diárias
+		15 Minutos: Em pé
+			O que fez no dia anterior
+			O que está programado para o dia corrente
+			Há algum impedimento? 
+	
+	* Revisão da Sprint: Feita no último dia da sprint 
+		Time box: 4 horas
+		O time apresenta para o PO o trabalho feito
+	
+	* Retrospectiva da sprint:  Feita no último dia da sprint 
+		Time box: 3 horas 
+		Lições aprendidas
+
+---------------Fundamentos de um projeto ágil
+
+*Papeis e responsabilidades do PO
+	O PO tem a capacidade de enxergar o valor das funcionalidades do sistema para o cliente. Por isso mesmo ele é reponsável por definir a ordem de implementação das funcionalidades e tambem é o responsável por validar o que foi feito.
+	O principal papel do PO é garantir a entrega do maior valor possível para o cliente.
+	Papel do PO na Planning-> Apresentar as histórias que serão propostas para a próxima sprint.
+	Depois da definição do backlog da sprint pelos DEVS o PO pode atuar priorizando o que deve ser feito primeiro 
+	Reelease Planing -> Lancamento de uma nova versão de um software
+		Release Planning de multiplas Squads-> Agrupamento das entregas de times diferentes
+		Release Planning de Projeto -> O PO deve quebrar as histórias e difinir quais entregarão mais valor para o cliente
+		
+* Análisando o escopo e definindo prioridades
+	É um dos momentos mais criticos do processo de desenvolvimento de projetos porque é nesse momento que será definido o que será definido
+	Uma dica é ter o O que muito bem definido para depois pensar no como
+	Em cada entrega é importante validar com o cliente afim de saber se o desenvolvimento esta caminhando na direção correta ou se será necessário realizar ajustes.
+	*Product backlog: Composto por Épicos e Estórias 
+		Épicos: Não possui muito detalhamento é tipo uma visão geral.
+		Estórias: São detalhamentos dos épicos, geralmente um épico é decomposto em várias estórias. É nas estórias que estão descritas as regras de negócio.
+		
+----------------Conceitos e atividades essenciais para o sucesso de um projeto ágil.
+
+1) Estórias vs Tarefas
+* Épico: objetivo macro que deve ser atingido (Geralmente não possui detalhamentos).
+* Estórias: Os épicos são decompostos em partes menores e mais detalhadas chamadas estórias. Uma estória deve ser escrita em nível de negócio
+* Tarefa: Cada estória é decomposta em partes menores e mais detalhadas chamdas de tarefas.
+2) Critérios de aceite, estimativa e planejamento de tarefas
+*Critérios de aceite: Conjunto de critérios que precisam ser alcaçados para que a estória atenda os requisitos do usuário
+	Objetivo: Definir limites para as estórias e ajudar o PO a detalhar em alto nível o que é necessário para entregar valor para o cliente.
+
+	Estimativa e planejamento: Planning poker é utilizado para se fazer estimativas do tamanho de tarefas em times ágeis
+					*Depois de as tarefas terem sido definidas cada integrante do time de DEV vota indicando o tamnho de cada uma das atividades.
+	Planejamento: 
+		* Na primeira parte o PO seleciona as estórias que ele considera prioritárias do Product Backlog para compor a Sprint backlog
+		* Na segunda parte, sem a presença do PO, o time quebra cada uma das estórias em tarefas. Nesse momento o time de DEV pode perceber que algumas estórias são muito complexas e que deverão retornar para o product backlog
+		* Depois que a sprint backlog é definida o PO estabele quais são as tarefas prioritárias
+3) Relacionamento com Clientes / Stakeholders
+	*A principal habilidade de um PO deve ser a sua capacidade de se comunicar com os mais diversos stackholders
+	
+*Rotinas de um time ágil	
+	
+1) Daily e Retrospectiva
+	*Daily (15 minutos em pé, a presença do SM e do PO não é obrigatória, principal objetivo é todos saberem o que todos estão fazendo e se alguem estiver com problemas alguem pode ajudar)
+	*Retrospectiva: No final da sprint: Discute-se pricipalmente o que foi ruim e o que foi bom. 
+2) Refinamento e review
+	*Refinamento: Ocorre antes da planning e tem o objetivo de aumentar o entendimento do time acerca do deve ser entregue ou seja acerca das estórias da próxima sprint (DEV, SM e PO) 
+	*Review: Todos os stackholders são convidados e o principal objetivo é validar as entregas (DEV, SM e PO) 
+3) Maturidade da equipe
+	*
+
+
+
+
+
+
+
+
+
+
+		
+		
+
+
+
+
+
