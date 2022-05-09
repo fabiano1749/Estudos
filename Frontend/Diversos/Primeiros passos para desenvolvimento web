@@ -9,7 +9,7 @@
 		1994 - Uso comercial. Embratel conexão discada
 		2000 - Banda larga
 - Primeiro dominio criado: Symbolics.com	15/03/1985	 ativo até hj
-- Primeiro blog 1994 (Justin Hallcriou)
+- Primeiro blog 1994 (Justin Hall criou)
 - Primeira compra pela internet : Em 11 de agosto de 1994
 ----------------------------------------------------------------------
 *Termos chave:
@@ -20,7 +20,7 @@ click bait -> Virus: se vc clicar ele pode executar algum código js para fazer 
 *A internet atualmente
 134 milhões de brasileiros com acesso - 75%
 99 % das pessoas acessam a rede por dispositivos móveis
-42 % Compotadores
+42 % Computadores
 37 % TV
 
 Recursos:
@@ -39,4 +39,60 @@ Pesquisas escolares: 41%
 Estudo por conta própria: 40%
 Transações financeiras: 33%
 ------------------------------------------------------------------------
+Redes:
+Backbone: Espinha dorsal - Gerencia o trafego e as conexões na internert 
+Provedor de acesso: Contratam o sinal do backbone e vendem para o usuário final - Oi, claro ...
+Provedor de serviço: ADSL(Banda larga), Fibra ótica, satélite
+------------------------------------------------------------------------
+TCP - > Transmission Control Protocol
+IP -> Internet Protocol
+A comunicação via protocolo TCP/IP funciona em 4 camadas:
+1) Física(Placa de rede ...)
+2) Rede(IP)
+3) Transporte(TCP, UDP)
+4) Aplicaçã (FTP, SMTP, HTTP, ...)
+
+UDP(Rápido, não confiável)
+TCP(Integridade e ordem dos dados, Handshake(Aperto de mãos entre hosts), Voltado para conxões)
+
+*Portas: "Por onde os dados saem e chegam"
+20 -> FTP, 22 -> SSH, 25 -> SMTP, 80 -> HTTP, 443 -> HTTPS
+
+*Modem -> Aparelho que modula e demodula sinais
+*Roteador -> Distribui a internet para um ou mais dispositivos em uma rede, pode fazer comunicação entre redes
+*Switch: Distribui internet para um ou mais dispositivos em uma rede, criado para ser "inteligente" não envia os dados para todos da rede mas apenas para o destinatário real. 
+
+*WIFI
+IEEE 802.11: 2,4 GHz, 2Mbps
+IEEE 802.11a: 5 GHz, 54Mbps
+IEEE 802.11b: 2,4 GHz, 11Mbps (Diminuição de interferência)
+IEEE 802.11g: 2,4 GHz, 54Mbps
+IEEE 802.11n: 2,4GHz/5GHz , 150Mbps-600Mbps
+*Segurança
+WEP: Chaves de 64 e 128 bits
+WPA: Chave trocada periodicamente
+WPA2(AES)(802.11i): + segurança + processamento 
+
+*Bloetooth -> conexão ponto a ponto
+4.0 -> 25 Mbps, 5.0 -> 50 Mbps
+---------------------------------------------------------------------------
+Aula prática
+
+code.jquery.com -> Onde ficam as bibliotecas do jquery
+
+Importando em uma página: <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+$(document).ready( 
+				function(){
+					alert('Esse alert será executado depois que a pagina tiver sido totalmente carregada!');
+				});
+				
+
+
+
+
+
+
+
+
 
