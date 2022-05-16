@@ -1,0 +1,254 @@
+O HTML foi criado em 1991 por Tim Berners-Lee
+
+HTML 1 - 1991 -> 18 Elementos
+HTML 2 - 1995
+HTML 3 - 1997
+HTML 4 - 1997
+HTML 5 - 2014
+
+* Um arquivo HTML é composto por elementos - (Ver imagem-1)
+* Cada tag é um elemento
+
+***Estrutura basica: 
+
+<!DOCTYPE html> Apenas indica o tipo de arquivo 
+<html> Elemento principal -> Todo o conteúdo da página deve estar dentro desse elemento.
+    <head>
+        <meta> Meta informações(charset ...)
+        <title></title>O conteúdo desse elemento aparecera escrito na aba do navegador
+    </head>
+    <body> Corpo ou conteúdo da página
+    </body>
+</html>
+
+------------------------------------Semântica------------------------------------------------
+
+*Durante muito tempo o elemento padrão para construção de páginas html foram as divs e a semantica era adicionada por meio de classes nessas divs 
+*No HTML5 foram adicionados novos elementos com semantica
+    -<section> Usada para definir áreas ou regiões de uma página
+    -<header> Cabeçalho da pagina de uma section etc
+    -<article> Representa uma composição independente em um documento que pode ser reutilizada
+    -<aside> está relacionado com a informação principal da pagina tipo uma barra lateral
+    -<footer> rodape da página de uma section etc
+    -<h1>-</h6> Paragrafos - Só pode haver um h1 por página
+
+------------------------------------Textos e links--------------------------------------------
+
+*<h1></h6> Representam parágrafos
+*<p></p> Representa um parágrafo que suporta texto, imagem, videos, código ... 
+
+*<a href="www.google.com.br" target="_blank"></a> Ancora: Serve para representar links
+    href -> Endereço para onde a ancora está apontando
+    target -> Indica como o link será aberto: Se o valor do target for (_blank) o link será aberto em uma nova aba
+
+------------------------------------Imagens-----------------------------------------------
+<img> -> Não possui tag de fechamento
+<img src="img/imagem.png" alt="Descriçao da imagem">
+
+***Programa util para redimensionar imagens no ubuntu: gThumb
+
+------------------------------------Listas-----------------------------------------------
+<ul> Representa uma lista onde a ordem dos itens não é importante
+<ol> Representa uma lista onde a ordem dos itens é importante
+<li> Corresponde a um item da lista
+
+
+####################################################### Introdução ao CSS3 ######################################################
+
+Criado em 1996 com o objetivo de separar a formatação da página do código html
+
+****Serve para criar regras de estilo para um elemento ou um conjunto de elementos
+
+Criar estilo  para classe
+    .classe{
+        padding: 10px;
+        ......
+    }
+ 
+Criar estilo para id
+    #id{
+        padding: 10px;
+        ......
+    }    
+
+****O navegador exibe cada elemento html como uma caixa retangular(BoxModel) e com o css é possível alterar a aparencia dessa caixa****
+
+O Box model tem 4 áreas
+*margin -> Espaçamento entre elementos
+*border -> Circundam a caixa do elemento - o padding e o conteúdo
+*padding -> É o espaçamento entre a borda e o conteúdo
+*content -> Conteúdo do elemento: Texto, imagem ....
+
+
+********************************************************************************Padding e margin
+É possível atribuir alterar essas propriedades dos elementos de vária maneiras
+1) .post {
+        padding: 10px;  Aplica um padding de 10 px nos 4 lados do Box model
+    }
+
+2) .post {
+        padding: 10px 5px; Aplica um padding de 10 px na parte superior e inferior e um padding de 5px do lado direito e esquerdo: 
+    }                      10 px -> eixo y ; 5 px -> eixo x
+
+3) .post {
+        padding: 15px 10px 5px 0; Aplica um padding diferente em cada um dos lados 
+    }                                 15px -> Superior 10px -> Direita 5px -> Inferior 0px -> Esquerda
+
+4) .post { Atribui espicificamente um valor para cada um dos lados do Box model 
+        padding-top: 15px;
+        padding-right: 10px;
+        padding-bottom: 5px;
+        padding-left: 0; 
+    }
+
+*******************************************************************************Background
+.post{
+    background-color: green;                Cor de fundo de um elemento
+    background-image: url("imagem.png");    Imagem de fundo de um elemento
+    background-position: top;               
+}
+
+.post {
+    background-color: green;  -> Nome da cor em igles
+    background-color: #008800; -> Nome da cor em exadecimal
+    background: #008800; -> Pode-se usar apenas background
+}
+
+********************************************************************************* Border
+Pode ter 3 valores: 
+    largura (width): pixels, centímetros, milímetros ... 
+    estilo (style): soida, pontilhada, tacejada, ...
+    cor (color): ingles , exadecimal, ...
+    
+.post {
+    border: 3px solid blue;
+    border-top: 2px dotted green;
+    border-right: 4px dashed pink;
+}
+
+.post { -> Pode-se aplicar estilo a cada um dos lados da borda especificamente
+    border-top: 2px dotted green;
+    border-right: 4px dashed pink;
+    border-bottom : 3px solid blue;
+    border-left : 3px solid blue;
+}
+
+.post { -> Pode-se aplicar estilo a umas das tres propriedades(aspecto) da borda diretamente
+    border-width: 3px;
+    border-color: green;
+    border-style: solic;
+}
+esse bloco de cima é equivalete a .post{border: 3px solid green;}
+
+È possível criar uma regra mais especifica ainda juntando a propriedade com o lado de uma borda: 
+.post {
+    border-top-width: 3px;
+    border-top-color: blue;
+    border-top-style: solid;
+}
+
+********************************************************************************* Border-radius (Permite arredondar os cantos de um elemento)
+border-radius: 10px; altera todos os cantos de um elemento
+border-radius: 50%;
+border-radius: 10% 20%; 10% no eixo y e 20% no eixo x
+border-radius: 10% 20% 30% 40%; cada um dos cantos (top, right, bottom, left) 
+
+obs: para transformar um quadrado em um circulo basta colocar um border-radius de 50%
+
+************************************************************************************************
+O navegador adiciona margem por default e alguns elementos: <h1><h6>, <p> ...
+
+
+*********************************** Estilizando textos ****************************************
+
+*********************font-family  -> É a fonte do nosso texto
+#title {
+    font-family: Verdana;
+}
+
+.post_title {
+    font-family: Verdana, Arial; -> Caso ocorra algum problema para usar a primeira fonte a segunda será usada.
+}
+
+*********************font-style -> altera a forma da fonte
+
+#title {
+    font-style: normal; 
+}
+
+.post_title {
+    font-style: italic; 
+}
+
+*********************font-weight -> altera o 'peso' do texto
+
+#title {
+    font-weight: normal; 
+}
+
+.post_title {
+    font-wight: bold; -> negrito
+}
+
+*********************text-transform
+
+#title {
+    text-transform: uppercase; 
+}
+
+.subtitle {
+    text-transform: lowercase; 
+}
+
+.post_title {
+    text-transform: capitalize;
+}
+
+*********************text-decoration
+
+#title {
+    text-decoration: underline; Coloca uma linha abaixo da palavra
+}
+
+.subtitle {
+    text-decoration: overline; Coloca uma linha em cima da palavra
+}
+
+.post_title {
+    text-decoration: line-through; Coloca uma linha no meio da palavra
+}
+
+*********************************** Estilizando listas ****************************************
+
+********************* list-style-type
+
+ul {
+    list-style-type: square; -> altera o marcador para um quadrado
+}
+
+ol {
+    list-style-type: upper-roman; -> altera a numeração para algarismos romanos maiusculos
+}
+
+ul {
+    list-style-type: "\1F44D"; -> altera o marcador para um emogi de um joinha.
+}
+
+********************* list-style-image
+
+ul {
+    list-style-image: url("java.png"); -> altera o marcador para uma imagem
+}
+
+*********************************** Dimensão e alinhamento ****************************************
+width: comprimento 
+height: altura
+Quando aplicamos esses valores em percentual, a referência é o elemento externo. Tipo se um conteiner possui um width de 100%
+significa que o comprimento dele é 100% do elemento que contem ele.
+
+max-width: comprimento máximo que o elemento pode ter -  Se a tela for menor que 900 px o conteúdo se adequa
+max-height: altura máxima que o elemento pode ter -  Se a tela for menor que 900 px o conteúdo se adequa
+
+margin: auto; mantem o elemento sempre alinhado
+
+text-align: Alinha o texto em relação ao elemento em que ele está contido
